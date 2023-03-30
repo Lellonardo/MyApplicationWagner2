@@ -3,6 +3,7 @@ package com.example.myapplication;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.View;
@@ -59,11 +60,17 @@ public class MainActivity extends AppCompatActivity {
         }
     }
     public void Logar(){
-       /* try{
+       try{
             bancoDados = openOrCreateDatabase("usuario", MODE_PRIVATE, null);
+            String sql = "SELECT * from users WHERE login ='" + txtLogin.getText().toString() + "' AND senha ='" + txtSenha.getText().toString();
+            Cursor cursor = bancoDados.rawQuery(sql, null);
+            /*if(cursor.getCount()>0){
+            /*    Intent intent = new Intent(this,TelaP.class);
+                startActivity(intent);
+            }*/
 
-
-            }
-        }*/
+            } catch (Exception e){
+                e.printStackTrace();
+        }
     }
 }
