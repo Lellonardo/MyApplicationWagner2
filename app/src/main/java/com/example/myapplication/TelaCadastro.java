@@ -41,12 +41,12 @@ public class TelaCadastro extends AppCompatActivity {
         if(!TextUtils.isEmpty(txtLogin2.getText().toString())){
             try{
                 bancoDados = openOrCreateDatabase("usuario", MODE_PRIVATE, null);
-                String sql = "INSERT INTO users (title,studio) VALUES (?,?)";
+                String sql = "INSERT INTO users (login,senha) VALUES (?,?)";
                 SQLiteStatement stmt = bancoDados.compileStatement(sql);
                 stmt.bindString(1,txtLogin2.getText().toString());
                 stmt.bindString(2,txtSenha.getText().toString());
-                stmt.bindString(3,txtConfirmaSenha.getText().toString());
-                if(txtSenha == txtConfirmaSenha) {
+
+                if(txtSenha.getText().toString().equals(txtConfirmaSenha.getText().toString())) {
                     stmt.executeInsert();
                     bancoDados.close();
                     finish();

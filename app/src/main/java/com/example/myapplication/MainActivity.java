@@ -62,12 +62,12 @@ public class MainActivity extends AppCompatActivity {
     public void Logar(){
        try{
             bancoDados = openOrCreateDatabase("usuario", MODE_PRIVATE, null);
-            String sql = "SELECT * from users WHERE login ='" + txtLogin.getText().toString() + "' AND senha ='" + txtSenha.getText().toString();
+            String sql = "SELECT * from users WHERE login ='" + txtLogin.getText().toString() + "' AND senha ='" + txtSenha.getText().toString()+"'";
             Cursor cursor = bancoDados.rawQuery(sql, null);
-            /*if(cursor.getCount()>0){
-            /*    Intent intent = new Intent(this,TelaP.class);
+            if(cursor.getCount()>0) {
+                Intent intent = new Intent(this, TelaP.class);
                 startActivity(intent);
-            }*/
+            }
 
             } catch (Exception e){
                 e.printStackTrace();
