@@ -2,6 +2,7 @@ package com.example.myapplication;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -10,7 +11,7 @@ import android.widget.TextView;
 
 public class TelaP extends AppCompatActivity {
     EditText txtNum1, txtNum2;
-    Button btnVezes, btnDividir, btnMais,btnMenos;
+    Button btnVezes, btnDividir, btnMais,btnMenos, btnLogOut;
     TextView txtResul;
 
 
@@ -24,6 +25,7 @@ public class TelaP extends AppCompatActivity {
         btnMais = (Button) findViewById(R.id.btnMais);
         btnMenos = (Button) findViewById(R.id.bntMenos);
         btnVezes = (Button) findViewById(R.id.bntVezes);
+        btnLogOut = (Button) findViewById(R.id.bntLogOut);
         btnDividir = (Button) findViewById(R.id.btntDividir);
         txtResul = (TextView) findViewById(R.id.txtResul);
 
@@ -55,38 +57,49 @@ public class TelaP extends AppCompatActivity {
             }
         });
 
+        btnLogOut.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                LogOut();
+            }
+        });
     }
 
     public void somar(){
-        Integer Num1 = Integer.parseInt(txtNum1.getText().toString());
-        Integer Num2 = Integer.parseInt(txtNum2.getText().toString());
-        Integer Resul = Num1+Num2;
+        Double Num1 = Double.parseDouble(txtNum1.getText().toString());
+        Double Num2 = Double.parseDouble(txtNum2.getText().toString());
+        Double Resul = Num1+Num2;
         txtResul.setText(Resul.toString());
 
     }
 
     public void subtrair(){
-        Integer Num1 = Integer.parseInt(txtNum1.getText().toString());
-        Integer Num2 = Integer.parseInt(txtNum2.getText().toString());
-        Integer Resul = Num1-Num2;
+        Double Num1 = Double.parseDouble(txtNum1.getText().toString());
+        Double Num2 = Double.parseDouble(txtNum2.getText().toString());
+        Double Resul = Num1-Num2;
         txtResul.setText(Resul.toString());
     }
 
     public void multiplicacao(){
-        Integer Num1 = Integer.parseInt(txtNum1.getText().toString());
-        Integer Num2 = Integer.parseInt(txtNum2.getText().toString());
-        Integer Resul = Num1*Num2;
+        Double Num1 = Double.parseDouble(txtNum1.getText().toString());
+        Double Num2 = Double.parseDouble(txtNum2.getText().toString());
+        Double Resul = Num1*Num2;
         txtResul.setText(Resul.toString());
     }
 
     public void divisao(){
-        Integer Num1 = Integer.parseInt(txtNum1.getText().toString());
-        Integer Num2 = Integer.parseInt(txtNum2.getText().toString());
+        Double Num1 = Double.parseDouble(txtNum1.getText().toString());
+        Double Num2 = Double.parseDouble(txtNum2.getText().toString());
         if(Num1 == 0 || Num2 == 0){
           txtResul.setText("Erro");
         }else {
-            Integer Resul = Num1 / Num2;
+            Double Resul = Num1 / Num2;
             txtResul.setText(Resul.toString());
             }
         }
+
+    public void LogOut(){
+        Intent intent = new Intent(this,MainActivity.class);
+        startActivity(intent);
+    }
 }
