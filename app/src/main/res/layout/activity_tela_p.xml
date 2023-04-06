@@ -11,12 +11,13 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="29dp"
-        android:layout_marginTop="36dp"
+        android:layout_marginTop="24dp"
         android:layout_marginEnd="172dp"
         android:ems="10"
         android:hint="Digite um número"
         android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView6" />
 
@@ -25,7 +26,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="29dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="8dp"
         android:layout_marginEnd="172dp"
         android:ems="10"
         android:hint="Digite um número"
@@ -54,7 +55,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="29dp"
-        android:layout_marginTop="56dp"
+        android:layout_marginTop="16dp"
         android:layout_marginEnd="165dp"
         android:text="Insira dois números:"
         android:textSize="24sp"
@@ -64,26 +65,15 @@
         app:layout_constraintTop_toBottomOf="@+id/textView5" />
 
     <Button
-        android:id="@+id/bntDividir"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="40dp"
-        android:text="/"
-        app:layout_constraintEnd_toStartOf="@+id/btnMais"
-        app:layout_constraintStart_toEndOf="@+id/bntVezes"
-        app:layout_constraintTop_toBottomOf="@+id/txtNum2" />
-
-    <Button
         android:id="@+id/btnMais"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="13dp"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="120dp"
         android:layout_marginEnd="14dp"
         android:text="+"
         app:layout_constraintEnd_toStartOf="@+id/bntMenos"
-        app:layout_constraintStart_toEndOf="@+id/bntDividir"
+        app:layout_constraintStart_toEndOf="@+id/btntDividir"
         app:layout_constraintTop_toBottomOf="@+id/txtNum2" />
 
     <Button
@@ -91,9 +81,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="4dp"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="120dp"
         android:text="X"
-        app:layout_constraintEnd_toStartOf="@+id/bntDividir"
+        app:layout_constraintEnd_toStartOf="@+id/btntDividir"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtNum2" />
 
@@ -101,22 +91,33 @@
         android:id="@+id/bntMenos"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="120dp"
         android:text="-"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/btnMais"
+        app:layout_constraintTop_toBottomOf="@+id/txtNum2" />
+
+    <Button
+        android:id="@+id/btntDividir"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="124dp"
+        android:text="/"
+        app:layout_constraintEnd_toStartOf="@+id/btnMais"
+        app:layout_constraintStart_toEndOf="@+id/bntVezes"
         app:layout_constraintTop_toBottomOf="@+id/txtNum2" />
 
     <TextView
         android:id="@+id/textView7"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="29dp"
-        android:layout_marginTop="58dp"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="36dp"
         android:text="Resultado:"
         android:textSize="24sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/bntDividir" />
+        app:layout_constraintTop_toBottomOf="@+id/btntDividir" />
 
     <TextView
         android:id="@+id/txtResul"
@@ -125,8 +126,23 @@
         android:layout_marginStart="104dp"
         android:layout_marginTop="20dp"
         android:layout_marginBottom="16dp"
+        android:textAlignment="center"
+        android:textSize="34sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView7"
-        app:layout_constraintVertical_bias="0.32" />
+        app:layout_constraintVertical_bias="0.225" />
+
+    <TextView
+        android:id="@+id/textView8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="27dp"
+        android:layout_marginBottom="60dp"
+        android:text="Escolha a operação:"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toTopOf="@+id/btnMais"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtNum2" />
 </androidx.constraintlayout.widget.ConstraintLayout>

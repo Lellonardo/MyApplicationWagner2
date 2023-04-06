@@ -22,6 +22,9 @@ public class TelaP extends AppCompatActivity {
         txtNum1 = (EditText) findViewById(R.id.txtNum1);
         txtNum2 = (EditText) findViewById(R.id.txtNum2);
         btnMais = (Button) findViewById(R.id.btnMais);
+        btnMenos = (Button) findViewById(R.id.bntMenos);
+        btnVezes = (Button) findViewById(R.id.bntVezes);
+        btnDividir = (Button) findViewById(R.id.btntDividir);
         txtResul = (TextView) findViewById(R.id.txtResul);
 
         btnMais.setOnClickListener(new View.OnClickListener() {
